@@ -13,7 +13,8 @@
     "jquery": "^3.7.1",
     "popper.js": "^1.16.1",
     "uuid": "^9.0.1",
-    "vue": "^2.6.14"
+    "vue": "^3.3.4",
+    "@vue/compat": "^3.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -23,7 +24,7 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "vue-template-compiler": "^2.6.14"
+    "@vue/compiler-sfc": "^3.3.4"
   },
   "eslintConfig": {
     "root": true,
