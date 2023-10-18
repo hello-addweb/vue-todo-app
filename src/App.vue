@@ -1,3 +1,43 @@
+<script setup>
+import { ref } from 'vue'
+import ToDos from "@/components/ToDo/ToDos.vue";
+import AddToDoButton from "@/components/ToDo/AddToDoButton.vue";
+import { v4 as uuidv4 } from 'uuid';
+
+
+const todoEntries = ref([
+  {
+    id: uuidv4(),
+    title: 'Task #1',
+    completed: false
+  },
+  {
+    id: uuidv4(),
+    title: 'Task #2',
+    completed: false
+  },
+  {
+    id: uuidv4(),
+    title: 'Task #3',
+    completed: false
+  },
+]);
+
+const deleteToDoItem = val => {
+  todoEntries.value = todoEntries.value.filter(item => item.id !== val)
+}
+
+const addToDoItem = val => {
+  todoEntries.value = [...todoEntries.value, val];
+}
+
+const completeToDoItem = val => {
+  const selectedTaskIndex = (element) => element.id == val;
+  const selected = todoEntries.value.findIndex(selectedTaskIndex);
+  todoEntries.value[selected].completed = !todoEntries.value[selected].completed;
+}
+
+</script>
 <template>
   <div id="app">
     <section class="vh-100">
@@ -20,55 +60,6 @@
   </div>
 </template>
 
-<script>
-import ToDos from "@/components/ToDo/ToDos.vue";
-import AddToDoButton from "@/components/ToDo/AddToDoButton.vue";
-import { v4 as uuidv4 } from 'uuid';
-
-export default {
-  name: 'App',
-  components: {
-    ToDos,
-    AddToDoButton
-  },
-  data() {
-    return {
-      todoEntries: [
-        {
-          id: uuidv4(),
-          title: 'Task #1',
-          completed: false
-        },
-        {
-          id: uuidv4(),
-          title: 'Task #2',
-          completed: false
-        },
-        {
-          id: uuidv4(),
-          title: 'Task #3',
-          completed: false
-        },
-      ],
-    }
-  },
-  methods: {
-    addToDoItem(newToDoItem) {
-      this.todoEntries = [...this.todoEntries, newToDoItem];
-    },
-    deleteToDoItem(toDoId){
-      this.todoEntries = this.todoEntries.filter(item => item.id !== toDoId)
-    },
-    completeToDoItem(toDoId){
-
-      const selectedTaskIndex = (element) => element.id == toDoId;
-      const selected = this.todoEntries.findIndex(selectedTaskIndex);
-      this.todoEntries[selected].completed = !this.todoEntries[selected].completed;
-
-    }
-  },
-}
-</script>
 
 <style>
 #app {
