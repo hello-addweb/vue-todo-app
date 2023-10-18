@@ -1,7 +1,7 @@
 <script setup>
 import { computed, defineProps, defineEmits } from 'vue'
 
-import ToDoItem from "./ToDoItem";
+import ToDoItem from "/components/ToDoItem.vue";
 
 const emit = defineEmits(['complete-todo-event', 'delete-todo-event'])
 const completeToDo = val => {

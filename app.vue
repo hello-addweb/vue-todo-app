@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import ToDos from "@/components/ToDo/ToDos.vue";
-import AddToDoButton from "@/components/ToDo/AddToDoButton.vue";
+import ToDos from "/components/ToDos.vue"
+import AddToDoButton from "/components/AddToDoButton.vue"
 import { v4 as uuidv4 } from 'uuid';
 
 
