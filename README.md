@@ -1,12 +1,31 @@
 
-# Branch feature/vue3 setup guide
+
+
+# Branch `feature/vue2` setup guide
+
+## Setup
+Make sure to install the dependencies:
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+# Branch `feature/vue3` setup guide
 
 ## Setup
 
 Make sure to install the dependencies:
 
-```bash
-# npm
+```
 npm install
 ```
 
@@ -14,14 +33,12 @@ npm install
 
 Start the development server on `http://localhost:3000`:
 
-```bash
-# npm
+```
 npm run dev
 ```
 
 ## Execute Test Cases
 
-```bash
-# npm
+```
 npm run test
 ```
