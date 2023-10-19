@@ -5,7 +5,6 @@ import ToDoItem from "/components/ToDoItem.vue";
 
 const emit = defineEmits(['complete-todo-event', 'delete-todo-event'])
 const completeToDo = val => {
-
   emit('complete-todo-event', val)
 }
 
@@ -22,11 +21,21 @@ const props = defineProps({
 })
 
 const completedTasks = computed(() => {
-  return props.todoEntries.filter((task) => task.completed == true)
+  if(typeof props.todoEntries !== 'undefined') {
+    return props.todoEntries.filter((task) => task.completed == true)
+  } else {
+    return [];
+  }
+
 })
 
 const ongoingTasks = computed(() => {
-  return props.todoEntries.filter((task) => task.completed == false)
+  if(typeof props.todoEntries !== 'undefined') {
+    return props.todoEntries.filter((task) => task.completed == false)
+  } else {
+    return [];
+  }
+
 })
 
 </script>
